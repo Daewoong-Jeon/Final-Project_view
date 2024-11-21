@@ -13,10 +13,11 @@ spec:
     metadata:
       labels:
         app: view
+        sidecar.istio.io/inject: "true" # Pod 레이블 추가
     spec:
       containers:
         - name: view
-          image: "username/view:latest"
+          image: "user13.azurecr.io/view:latest"
           ports:
             - containerPort: 8080
           readinessProbe:
